@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "App that allow users to see a display of payments made through MPesa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "johnson wamuyu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
