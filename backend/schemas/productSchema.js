@@ -45,23 +45,29 @@ const RootQuery = new GraphQLObjectType({
   fields: {
     book: {
       type: BookType,
-      resolver: (parent, args) => {
+      args: { id: { type: GraphQLString } },
+      resolve: (parent, args) => {
         return _.find(books, { id: args.id });
       },
     },
     books: {
       type: new GraphQLList(BookType),
-      resolver: () => books,
+      resolve: () => books,
     },
     author: {
       type: AuthorType,
-      resolver: (parent, args) => {
+      args: { id: { type: GraphQLString } },
+      resolve: (parent, args) => {
         return _.find(authors, { id: args.id });
       },
     },
     authors: {
       type: new GraphQLList(AuthorType),
-      resolver: () => authors,
+      resolve: () => authors,
     },
   },
+});
+
+export const schema = new GraphQLSchema({
+  query: RootQuery,
 });
