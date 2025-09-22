@@ -1,7 +1,13 @@
 import BookCard from "../components/BookCard";
 
 const books = [
-  { id: "1", title: "Love and Beast", genre: "Fantasy", price: 29.99, authorId: "1" },
+  {
+    id: "1",
+    title: "Love and Beast",
+    genre: "Fantasy",
+    price: 29.99,
+    authorId: "1",
+  },
   {
     id: "2",
     title: "The Hobbit",
@@ -22,7 +28,10 @@ const BooksList = () => {
   return (
     <div className="wrapper">
       <div className="container">
-        <h2 className="text-7xl font-bold mb-4">Books List</h2>
+        <div className="flex flex-row gap-8 justify-between items-center w-full mb-8">
+          <h2 className="text-5xl font-bold mb-4">Books List</h2>
+          <button>Add a book</button>
+        </div>
         <div>
           {books.length ? (
             <div className="grid grid-cols-3 gap-4">
